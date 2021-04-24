@@ -17,7 +17,7 @@ $(function($) {
 ### Tags mode
 ```
 <ul>
-  <li data-filter="">All</li>
+  <li data-filter="all">All</li>
   <li data-filter="Cat">Cats</li>
   <li data-filter="Dog">Dogs</li>
   <li data-filter="Monkey">Monkeys</li>
