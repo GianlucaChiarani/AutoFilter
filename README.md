@@ -24,6 +24,18 @@ An easy-to-use jQuery plugin that allow you to filter any HTML element by tags o
   <div data-tags="monkey"><img src="" /></div>
 </div>
 ```
+### Input mode
+```
+<input type="text" data-filter />
+```
+```
+<div>
+    <div data-to-filter>dog,cat</div>
+    <div data-to-filter>dog</div>
+    <div data-to-filter>cat</div>
+    <div data-to-filter>monkey</div>
+</div>
+```
 ## Options
 ```
 $(function($) {
