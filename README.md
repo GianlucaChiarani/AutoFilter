@@ -1,12 +1,15 @@
 # AutoFilter
 An easy-to-use jQuery plugin that allows to filter any HTML element by tags or input value.
 
+DEMO1: Filter by tag
+DEMO2: Filter by input
+
 ## Installation
 ### CDN
 ```
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@1.0/autofilter.js"></script>
 ```
-## Get started
+## Basic usage
 Initialize the plugin.
 ```
 $(function($) {
@@ -17,17 +20,17 @@ $(function($) {
 ```
 <ul>
   <li data-filter="all">All</li>
-  <li data-filter="Cat">Cats</li>
-  <li data-filter="Dog">Dogs</li>
-  <li data-filter="Monkey">Monkeys</li>
+  <li data-filter="cat">Cats</li>
+  <li data-filter="dog">Dogs</li>
+  <li data-filter="monkey">Monkeys</li>
 </ul>
 ```
 ```
 <div>
-  <div data-tags="dog,cat"><img src="" /></div>
-  <div data-tags="dog"><img src="" /></div>
-  <div data-tags="cat"><img src="" /></div>
-  <div data-tags="monkey"><img src="" /></div>
+  <div data-tags="dog,cat"></div>
+  <div data-tags="dog"></div>
+  <div data-tags="cat,monkey"></div>
+  <div data-tags="monkey"></div>
 </div>
 ```
 ### Input mode
@@ -52,9 +55,9 @@ $(function($) {
 ```
 | Name  | Type | Default | Description |
 | ------------- | ------------- | ------------- | ------------- |
-| showClass  | `String`  | `'show'` | |
-| htmlAsTag  | `String`  | `false`  | |
-| subString  | `String`  | `false`  |  |
-| caseSensitive  | `Bool`  | `false`  |  |
-| animation  | `Bool`  | `true`  | |
-| duration  | `Integer`  | `0`  | |
+| showClass  | `String`  | `'show'` | The class applied to the filtered elements. |
+| htmlAsFilter  | `String`  | `false`  | Use the HTML in the filter trigger element as filter string. |
+| subString  | `String`  | `false`  | Enable filtering of filter string as a substring. Default mode with the attribute `data-to-filter` |
+| caseSensitive  | `Bool`  | `false`  | Enable the case sensitive mode. |
+| animation  | `Bool`  | `true`  | Enable the fade animation. |
+| duration  | `Integer`  | `0`  | Duration of the fade animation. |
