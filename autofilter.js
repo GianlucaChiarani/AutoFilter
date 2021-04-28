@@ -11,7 +11,7 @@
 
         var settings = $.extend({
             showClass: 'show',
-            htmlAsTag: false,
+            htmlAsFilter: false,
             subString: false,
             caseSensitive: false,
             animation: true,
@@ -19,7 +19,7 @@
         }, options );
 
         $('[data-filter]:not(input)').click(function() {
-            if (settings.htmlAsTag) {
+            if (settings.htmlAsFilter) {
                 var filterValue = $(this).html().trim();
             } else {
                 var filterValue = $(this).attr('data-filter').trim();
