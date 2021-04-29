@@ -1,9 +1,7 @@
 # AutoFilter
 An easy-to-use jQuery plugin that allows to filter any HTML element by tags or an input value.
 
-[Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX)
-
-[Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
+DEMO 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - DEMO 2: [Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
 
 ## Installation
 ### CDN
