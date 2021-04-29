@@ -2,6 +2,7 @@
 An easy-to-use jQuery plugin that allows to filter any HTML element by tags or an input value.
 
 [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX)
+
 [Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
 
 ## Installation
