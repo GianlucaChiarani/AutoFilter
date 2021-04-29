@@ -1,5 +1,5 @@
 # AutoFilter
-An easy-to-use jQuery plugin that allows to filter any HTML element by tags or input value.
+An easy-to-use jQuery plugin that allows to filter any HTML element by tags or an input value.
 
 DEMO1: Filter by tag
 DEMO2: Filter by input
@@ -10,7 +10,6 @@ DEMO2: Filter by input
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@1.0/autofilter.js"></script>
 ```
 ## Basic usage
-Initialize the plugin.
 ```
 $(function($) {
     $.autofilter();
@@ -57,7 +56,7 @@ $(function($) {
 | ------------- | ------------- | ------------- | ------------- |
 | showClass  | `String`  | `'show'` | The class applied to the filtered elements. |
 | htmlAsFilter  | `String`  | `false`  | Use the HTML in the filter trigger element as filter string. |
-| subString  | `String`  | `false`  | Enable filtering of filter string as a substring. Default mode with the attribute `data-to-filter` |
+| subString  | `String`  | `false`  | Filter string as substring. Always `true` with the attribute `data-to-filter`. |
 | caseSensitive  | `Bool`  | `false`  | Enable the case sensitive mode. |
-| animation  | `Bool`  | `true`  | Enable the fade animation. |
+| animation  | `Bool`  | `true`  | Enable the jQuery fade-in animation. |
 | duration  | `Integer`  | `0`  | Duration of the fade animation. |
