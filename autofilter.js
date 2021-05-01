@@ -73,12 +73,12 @@
 
                 if (valid) {
                     if (settings.animation)
-                        $(this).fadeIn(settings.duration);
+                        $(this).fadeIn(0);
                     
                     $(this).addClass(settings.showClass);
                 } else {
                     if (settings.animation)
-                        $(this).fadeOut(0);
+                        $(this).fadeOut(settings.duration);
                     
                     $(this).removeClass(settings.showClass);
                 }
