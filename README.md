@@ -6,7 +6,7 @@ DEMO 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - DEMO 
 ## Installation
 ### CDN
 ```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.1/autofilter.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.2/autofilter.js"></script>
 ```
 ## Basic usage
 Initialize the plugin.
