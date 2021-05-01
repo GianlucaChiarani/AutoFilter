@@ -78,7 +78,7 @@
                     $(this).addClass(settings.showClass);
                 } else {
                     if (settings.animation)
-                        $(this).fadeOut(settings.duration)
+                        $(this).fadeOut(0);
                     
                     $(this).removeClass(settings.showClass);
                 }
