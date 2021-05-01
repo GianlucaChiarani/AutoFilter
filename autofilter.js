@@ -1,6 +1,6 @@
 /**
  * AutoFilter (https://github.com/GianlucaChiarani/AutoFilter)
- * @version 0.1
+ * @version 0.2
  * @author Gianluca Chiarani
  * @license The MIT License (MIT)
  */
