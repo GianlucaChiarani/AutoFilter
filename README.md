@@ -6,7 +6,7 @@ DEMO 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - DEMO 
 ## Installation
 ### CDN
 ```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.2/autofilter.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.3/autofilter.js"></script>
 ```
 ## Basic usage
 Initialize the plugin.
@@ -59,8 +59,9 @@ $(function($) {
 | Name  | Type | Default | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | showClass  | `String`  | `'show'` | The class applied to the filtered elements. |
-| htmlAsFilter  | `String`  | `false`  | Use the HTML in the filter trigger element as filter string. |
-| subString  | `String`  | `false`  | Filter string as substring. Always `true` in the input mode. |
-| caseSensitive  | `Bool`  | `false`  | Enable the case sensitive mode. |
-| animation  | `Bool`  | `true`  | Enable the jQuery fade-in animation. |
+| htmlAsFilter  | `String`  | `false`  | Sets the text in the filter trigger element as filter string. |
+| subString  | `String`  | `false`  | Searches for the string to filter as a substring. Always `true` in input mode. |
+| minChars  | `Integer`  | `3`  | Minimum characters to start filter in input mode. |
+| caseSensitive  | `Bool`  | `false`  | Enables the case sensitive mode. |
+| animation  | `Bool`  | `true`  | Enables the jQuery fade-in animation. |
 | duration  | `Integer`  | `0`  | Duration of the fade animation. |

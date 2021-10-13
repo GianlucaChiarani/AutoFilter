@@ -1,6 +1,6 @@
 /**
  * AutoFilter (https://github.com/GianlucaChiarani/AutoFilter)
- * @version 0.2
+ * @version 0.3
  * @author Gianluca Chiarani
  * @license The MIT License (MIT)
  */
@@ -13,6 +13,7 @@
             showClass: 'show',
             htmlAsFilter: false,
             subString: false,
+            minChars: 3,
             caseSensitive: false,
             animation: true,
             duration: 0
@@ -33,8 +34,9 @@
 
         $('input[data-filter]').keyup(function() {
             var value = $(this).val();
+            settings.subString = true;
 
-            if (value!='' && value.length>2) {
+            if (value!='' && value.length>=settings.minChars) {
                 af_filter(value);
             } else {
                 $('[data-tags],[data-to-filter]').fadeIn(settings.duration).addClass(settings.showClass);
@@ -55,7 +57,6 @@
                     tofilter = tags.split(',');
                 } else {
                     tofilter.push($(this).html());
-                    settings.subString = true;
                 }
 
                 if (!settings.caseSensitive) 
@@ -63,7 +64,7 @@
 
                 if (settings.subString) {
                     tofilter.forEach(function(toFilterOne) {
-                        if (toFilterOne.indexOf(filterValue) > -1) {
+                        if (toFilterOne.replace(/(&lt;([^>]+)>)/gi, "").indexOf(filterValue) > -1) {
                             valid = true;
                         }
                     });
