@@ -63,7 +63,7 @@ $(function($) {
 | subString  | `Bool`  | `false`  | Searches for the string to filter as a substring. Always `true` in input mode. |
 | minChars  | `Integer`  | `3`  | Minimum characters to start filter in input mode. |
 | caseSensitive  | `Bool` | `false`  | Enables the case sensitive mode. |
-| default  | `String`  | `false` | Default filter on page load. This value must match the `data-filter` attribute value of a filter trigger element. |
-| urlSearchParam  | `String`  | `false`  | Name of the query parameter used to filter. |
+| default  | `String`  | | Default filter on page load. This value must match the `data-filter` attribute value of a filter trigger element. |
+| urlSearchParam  | `String`  | | Name of the query parameter used to filter. |
 | animation  | `Bool`  | `true`  | Enables the fade-in animation. |
 | duration  | `Integer`  | `0`  | Duration of the fade animation. |
