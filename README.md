@@ -1,12 +1,12 @@
 # AutoFilter
 An easy-to-use jQuery plugin that allows you to filter any HTML element by tags or an input value.
 
-DEMO 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - DEMO 2: [Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
+EXAMPLE 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - EXAMPLE 2: [Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
 
 ## Installation
 ### CDN
 ```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.3/autofilter.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.4/autofilter.js"></script>
 ```
 ## Basic usage
 Initialize the plugin.
@@ -59,9 +59,11 @@ $(function($) {
 | Name  | Type | Default | Description |
 | ------------- | ------------- | ------------- | ------------- |
 | showClass  | `String`  | `'show'` | The class applied to the filtered elements. |
-| htmlAsFilter  | `String`  | `false`  | Sets the text in the filter trigger element as filter string. |
-| subString  | `String`  | `false`  | Searches for the string to filter as a substring. Always `true` in input mode. |
+| htmlAsFilter  | `Bool`  | `false`  | Sets the text in the filter trigger element as filter string. |
+| subString  | `Bool`  | `false`  | Searches for the string to filter as a substring. Always `true` in input mode. |
 | minChars  | `Integer`  | `3`  | Minimum characters to start filter in input mode. |
-| caseSensitive  | `Bool`  | `false`  | Enables the case sensitive mode. |
-| animation  | `Bool`  | `true`  | Enables the jQuery fade-in animation. |
+| caseSensitive  | `Bool` | `false`  | Enables the case sensitive mode. |
+| default  | `String`  | `false` | Default filter on page load. This value must match the `data-filter` attribute value of a filter trigger element. |
+| urlSearchParam  | `String`  | `false`  | Name of the query parameter used to filter. |
+| animation  | `Bool`  | `true`  | Enables the fade-in animation. |
 | duration  | `Integer`  | `0`  | Duration of the fade animation. |

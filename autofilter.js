@@ -1,6 +1,6 @@
 /**
  * AutoFilter (https://github.com/GianlucaChiarani/AutoFilter)
- * @version 0.3
+ * @version 0.4
  * @author Gianluca Chiarani
  * @license The MIT License (MIT)
  */
@@ -15,9 +15,33 @@
             subString: false,
             minChars: 3,
             caseSensitive: false,
+            default: false,
+            urlSearchParam: false,
             animation: true,
             duration: 0
         }, options );
+
+        $(function() {
+            var showAll = true;
+
+            if (settings.default) {
+                $('[data-filter="' + settings.default +'"]').click();
+                showAll = false;
+            }
+
+            if (settings.urlSearchParam) {
+                let searchParams = new URLSearchParams(window.location.search);
+                if (searchParams.has(settings.urlSearchParam)) {
+                    $('[data-filter="' + searchParams.get(settings.urlSearchParam) + '"]').click();
+                    showAll = false;
+                }
+            }
+
+            if (showAll)
+                $('[data-tags],[data-to-filter]').each(function () {
+                    $(this).addClass('show');
+                });
+        });
 
         $('[data-filter]:not(input)').click(function() {
             if (settings.htmlAsFilter) {
