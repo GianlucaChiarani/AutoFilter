@@ -6,7 +6,7 @@ EXAMPLE 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - EX
 ## Installation
 ### CDN
 ```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.4/autofilter.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.4.1/autofilter.js"></script>
 ```
 ## Basic usage
 Initialize the plugin.
