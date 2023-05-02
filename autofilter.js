@@ -1,6 +1,6 @@
 /**
  * AutoFilter (https://github.com/GianlucaChiarani/AutoFilter)
- * @version 0.4
+ * @version 0.4.1
  * @author Gianluca Chiarani
  * @license The MIT License (MIT)
  */
@@ -39,7 +39,7 @@
 
             if (showAll)
                 $('[data-tags],[data-to-filter]').each(function () {
-                    $(this).addClass('show');
+                    $(this).addClass(settings.showClass);
                 });
         });
 
@@ -50,10 +50,14 @@
                 var filterValue = $(this).attr('data-filter').trim();
             }
 
-            if (filterValue!='')
+            if (filterValue!='') {
                 af_filter(filterValue);
-            else
-                $('[data-tags],[data-to-filter]').fadeIn(settings.duration).addClass(settings.showClass);
+            } else {
+                $('[data-tags],[data-to-filter]').addClass(settings.showClass);
+                
+                if (settings.animation)
+                    $('[data-tags],[data-to-filter]').fadeIn(settings.duration);
+            }
         });
 
         $('input[data-filter]').keyup(function() {
@@ -63,7 +67,10 @@
             if (value!='' && value.length>=settings.minChars) {
                 af_filter(value);
             } else {
-                $('[data-tags],[data-to-filter]').fadeIn(settings.duration).addClass(settings.showClass);
+                $('[data-tags],[data-to-filter]').addClass(settings.showClass);
+                
+                if (settings.animation)
+                    $('[data-tags],[data-to-filter]').fadeIn(settings.duration);
             }
 
         });
