@@ -1,23 +1,53 @@
 # AutoFilter
-An easy-to-use jQuery plugin that allows you to filter any HTML element by tags or an input value.
 
-EXAMPLE 1: [Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) - EXAMPLE 2: [Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
+AutoFilter is a lightweight and easy-to-use jQuery plugin that lets you filter any HTML element by tags or input values. It is highly customizable and requires minimal setup.
+
+[Demo: Filter by tag](https://codepen.io/GianlucaChiarani/pen/OJWYByX) | [Demo: Filter by input](https://codepen.io/GianlucaChiarani/pen/ExZzMYx)
+
+---
+
+## Features
+
+- Filter elements by tags or input text
+- Simple integration with data attributes
+- Customizable options for case sensitivity, animation, and more
+- Supports both tag-based and input-based filtering
+- Lightweight and dependency-free (except for jQuery)
+
+---
 
 ## Installation
+
 ### CDN
+
+```html
+<script
+  type="text/javascript"
+  src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.5/autofilter.js"
+></script>
 ```
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/GianlucaChiarani/AutoFilter@0.4.1/autofilter.js"></script>
-```
-## Basic usage
-Initialize the plugin.
-```
-$(function($) {
-    $.autofilter();
+
+---
+
+## Basic Usage
+
+Initialize the plugin after including jQuery and the script:
+
+```js
+$(function () {
+  $.autofilter();
 });
 ```
-### Tags mode
-Set the filter tag in the `data-filter` attribute.
-```
+
+---
+
+## Usage Modes
+
+### 1. Tags Mode
+
+Set the filter tag in the `data-filter` attribute:
+
+```html
 <ul>
   <li data-filter>All</li>
   <li data-filter="cat">Cats</li>
@@ -25,8 +55,10 @@ Set the filter tag in the `data-filter` attribute.
   <li data-filter="monkey">Monkeys</li>
 </ul>
 ```
-Set one or more tags separated by comma in the `data-tags` attribute.
-```
+
+Assign one or more tags (comma-separated) to the elements you want to filter using the `data-tags` attribute:
+
+```html
 <div>
   <div data-tags="dog,cat"></div>
   <div data-tags="dog"></div>
@@ -34,36 +66,54 @@ Set one or more tags separated by comma in the `data-tags` attribute.
   <div data-tags="monkey"></div>
 </div>
 ```
-### Input mode
-Add the `data-filter` attribute on the filter input.
-```
+
+### 2. Input Mode
+
+Add the `data-filter` attribute to your input element:
+
+```html
 <input type="text" data-filter />
 ```
-Add the `data-to-filter` attribute on the elements to filter by theirs content.
-```
+
+Add the `data-to-filter` attribute to the elements you want to filter by their content:
+
+```html
 <div>
-    <div data-to-filter>dog,cat</div>
-    <div data-to-filter>dog</div>
-    <div data-to-filter>cat</div>
-    <div data-to-filter>monkey</div>
+  <div data-to-filter>dog,cat</div>
+  <div data-to-filter>dog</div>
+  <div data-to-filter>cat</div>
+  <div data-to-filter>monkey</div>
 </div>
 ```
+
+---
+
 ## Options
-```
-$(function($) {
-    $.autofilter({
-      caseSensitive: true
-    });
+
+You can pass options when initializing the plugin:
+
+```js
+$(function () {
+  $.autofilter({
+    caseSensitive: true,
+  });
 });
 ```
-| Name  | Type | Default | Description |
-| ------------- | ------------- | ------------- | ------------- |
-| showClass  | `String`  | `'show'` | The class applied to the filtered elements. |
-| htmlAsFilter  | `Bool`  | `false`  | Sets the text in the filter trigger element as filter string. |
-| subString  | `Bool`  | `false`  | Searches for the string to filter as a substring. Always `true` in input mode. |
-| minChars  | `Integer`  | `3`  | Minimum characters to start filter in input mode. |
-| caseSensitive  | `Bool` | `false`  | Enables the case sensitive mode. |
-| default  | `String`  | `''` | Default filter on page load. This value must match the `data-filter` attribute value of a filter trigger element. |
-| urlSearchParam  | `String`  | `''` | Name of the query parameter used to filter. |
-| animation  | `Bool`  | `true`  | Enables the fade-in animation. |
-| duration  | `Integer`  | `0`  | Duration of the fade animation. |
+
+| Option         | Type    | Default | Description                                                                |
+| -------------- | ------- | ------- | -------------------------------------------------------------------------- |
+| showClass      | String  | 'show'  | The class applied to the filtered elements.                                |
+| htmlAsFilter   | Boolean | false   | Use the text in the filter trigger element as the filter string.           |
+| subString      | Boolean | false   | Search for the filter string as a substring (always `true` in input mode). |
+| minChars       | Integer | 3       | Minimum characters to start filtering in input mode.                       |
+| caseSensitive  | Boolean | false   | Enable case-sensitive filtering.                                           |
+| default        | String  | ''      | Default filter on page load. Must match a `data-filter` attribute value.   |
+| urlSearchParam | String  | ''      | Name of the query parameter used to filter.                                |
+| animation      | Boolean | true    | Enable fade-in animation.                                                  |
+| duration       | Integer | 0       | Duration of the fade animation (ms).                                       |
+
+---
+
+## License
+
+MIT
