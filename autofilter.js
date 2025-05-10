@@ -1,15 +1,16 @@
 /**
  * AutoFilter (https://github.com/GianlucaChiarani/AutoFilter)
- * @version 0.4.1
+ * @version 0.5
  * @author Gianluca Chiarani
  * @license The MIT License (MIT)
  */
 
 (function ($) {
   $.autofilter = function (options) {
-    var settings = $.extend(
+    const settings = $.extend(
       {
         showClass: "show",
+        activeClass: "active",
         htmlAsFilter: false,
         subString: false,
         minChars: 3,
@@ -23,15 +24,15 @@
     );
 
     $(function () {
-      var showAll = true;
+      let showAll = true;
 
-      if (settings.default) {
+      if (settings.default !== false) {
         $('[data-filter="' + settings.default + '"]').click();
         showAll = false;
       }
 
       if (settings.urlSearchParam) {
-        let searchParams = new URLSearchParams(window.location.search);
+        const searchParams = new URLSearchParams(window.location.search);
         if (searchParams.has(settings.urlSearchParam)) {
           $(
             '[data-filter="' + searchParams.get(settings.urlSearchParam) + '"]'
@@ -47,28 +48,32 @@
     });
 
     $("[data-filter]:not(input)").click(function () {
+      let filterValue = "";
       if (settings.htmlAsFilter) {
-        var filterValue = $(this).html().trim();
+        filterValue = $(this).html().trim();
       } else {
-        var filterValue = $(this).attr("data-filter").trim();
+        filterValue = $(this).attr("data-filter").trim();
       }
 
       if (filterValue != "") {
-        af_filter(filterValue);
+        applyFilter(filterValue);
       } else {
         $("[data-tags],[data-to-filter]").addClass(settings.showClass);
 
         if (settings.animation)
           $("[data-tags],[data-to-filter]").fadeIn(settings.duration);
       }
+
+      $("[data-filter]:not(input)").removeClass(settings.activeClass);
+      $(this).addClass(settings.activeClass);
     });
 
     $("input[data-filter]").keyup(function () {
-      var value = $(this).val();
+      const value = $(this).val();
       settings.subString = true;
 
       if (value != "" && value.length >= settings.minChars) {
-        af_filter(value);
+        applyFilter(value);
       } else {
         $("[data-tags],[data-to-filter]").addClass(settings.showClass);
 
@@ -77,11 +82,11 @@
       }
     });
 
-    function af_filter(filterValue) {
+    function applyFilter(filterValue) {
       $("[data-tags],[data-to-filter]").each(function () {
-        var tags = $(this).attr("data-tags");
-        var tofilter = Array();
-        var valid = false;
+        const tags = $(this).attr("data-tags");
+        let tofilter = [];
+        let valid = false;
 
         if (!settings.caseSensitive) filterValue = filterValue.toLowerCase();
 
