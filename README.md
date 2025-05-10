@@ -100,17 +100,18 @@ $(function () {
 });
 ```
 
-| Option         | Type    | Default | Description                                                                |
-| -------------- | ------- | ------- | -------------------------------------------------------------------------- |
-| showClass      | String  | 'show'  | The class applied to the filtered elements.                                |
-| htmlAsFilter   | Boolean | false   | Use the text in the filter trigger element as the filter string.           |
-| subString      | Boolean | false   | Search for the filter string as a substring (always `true` in input mode). |
-| minChars       | Integer | 3       | Minimum characters to start filtering in input mode.                       |
-| caseSensitive  | Boolean | false   | Enable case-sensitive filtering.                                           |
-| default        | String  | ''      | Default filter on page load. Must match a `data-filter` attribute value.   |
-| urlSearchParam | String  | ''      | Name of the query parameter used to filter.                                |
-| animation      | Boolean | true    | Enable fade-in animation.                                                  |
-| duration       | Integer | 0       | Duration of the fade animation (ms).                                       |
+| Option         | Type    | Default  | Description                                                                |
+| -------------- | ------- | -------- | -------------------------------------------------------------------------- |
+| showClass      | String  | 'show'   | The class applied to the filtered elements.                                |
+| activeClass    | String  | 'active' | The class applied to the active filter trigger element.                    |
+| htmlAsFilter   | Boolean | false    | Use the text in the filter trigger element as the filter string.           |
+| subString      | Boolean | false    | Search for the filter string as a substring (always `true` in input mode). |
+| minChars       | Integer | 3        | Minimum characters to start filtering in input mode.                       |
+| caseSensitive  | Boolean | false    | Enable case-sensitive filtering.                                           |
+| default        | String  | ''       | Default filter on page load. Must match a `data-filter` attribute value.   |
+| urlSearchParam | String  | ''       | Name of the query parameter used to filter.                                |
+| animation      | Boolean | true     | Enable fade-in animation.                                                  |
+| duration       | Integer | 0        | Duration of the fade animation (ms).                                       |
 
 ---
 
